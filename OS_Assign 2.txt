@@ -4,14 +4,15 @@
    mkdir "b$i"
    done
    
-
+===============================================
 
 2.->
    a)To find length of a string
     >echo -n hello | wc -m
 
    c)copying string
-    >
+    >str2=$str1
+     echo $str2
   
    d)concatenation of strings
     >obj1="str1"
@@ -22,7 +23,7 @@
    e)compare two strings
    >obj1="str1"
     obj2="str2"
-    if[ "$str1" = "$str2"];then
+    if[ "$str1" = "$str2"]; then
     echo "strings are equal."
     else
     echo "strings are not equal."
@@ -34,25 +35,34 @@
       rev = $str1 | rev
 
 
-
+===============================================================
 
 3.->for (( i=1;i<=10;i++))
     do
     mv "$i"  "supriya$i"
     done
+=====================================================================
+4.->echo $HOME,
+    echo $HISTORY,
+    echo $LOGNAME,
+    echo $PATH,
+    echo $TERM,
+    echo $SHELL.
+========================================================================
 
-4.->echo $HOME,echo $HISTORY,echo $LOGNAME,echo $PATH,echo $TERM,echo $SHELL.
+5.>ls - la | cut -b 1-10
+  >ls - la | cut -c 1-10
+=======================================================================
 
-5.>
-
-
-6.>ls -al
-
+6.>ls -l | awk'{print$1}
+======================================================================
 7.>find -type f -name "*.sh" -size+5k-ls
 
 
+=======================================================================
 
 #Shell-Programs
+
   
 
 1>echo "enter a year"
@@ -70,30 +80,31 @@
 	
 	a) elif	
 	ANS:echo "enter number between 1 to 7"
-        read num
-        if [[ $num -eq 1 ]]
+:v3i""        read num
+        if [ $num -eq 1 ]
         then 
        echo "Sunday"  
-       elif [[ $num -eq 2 ]]
+       elif [ $num -eq 2 ]
 	   then 
        echo "Monday"
-       elif [[ $num -eq 3 ]]
+       elif [ $num -eq 3 ]
        then  
      echo "Tuesday"
-     lif [[ $num -eq 4]]
+     lif [ $num -eq 4 ]
      then 
       echo "Wednesday"
-      lif [[ $num -eq 5]]
+
+      lif [ $num -eq 5 ]
  	  then 
       echo "Thursday"
-      lif [[ $num -eq 6 ]]
+      lif [ $num -eq 6 ]
      then 
       echo "Friday"
-      lif [[ $num -eq 7 ]]
+      lif [ $num -eq 7 ]
       then 
       echo "saturday"
       fi
-	================================================================
+==========================================================================================
 	b) case 
     ANS:echo "enter number between 1 to 7"
         read num
@@ -110,9 +121,9 @@
 3. a) Write a script to find biggest of three no.s
     ANS: echo "enter 1st number"
          read num1
-         echo "enter 1st number"
+         echo "enter 2nd number"
          read num2
-         echo "enter 1st number"
+         echo "enter 3rd number"
          read num3
          if [ $num1 -gt $num2 ] && [ $num1 -gt $num3 ]
          then 
@@ -124,12 +135,12 @@
          echo " $num3 is greatest number"
          fi
    ==========================================================================================
-   b) To find avg of 3 no.s, read no.s from keyboard
+   b) To find avg of 3 no.s, read no.s from keyboardii
    ANS: echo "enter 1st number"
         read num1
-        echo "enter 1st number"
+        echo "enter 2nd number"
         read num2
-        echo "enter 1st number"
+        echo "enter 3rd number"
         read num3
         sum=`expr $num1 + $num2 + $num3`
         avg=`expr $sum / 3`
@@ -144,11 +155,16 @@
      else
      echo "Number is odd."
      fi
-===================================================================================================
+=========================================================================:::==========================
 5. Write a program to print calendar of current month in next year,previous years.
- ANS:
+ ANS: mon=$(date | awk'{print $3}')
+     year=$(date | awk'{print $4}')
+
+     cal $mon $prev
+     cal $mon $year
+     cal $mon $next
  
- 
+
  
 =====================================================================================================
 
@@ -196,7 +212,7 @@ ANS:
 9.Write a shell script to reverse the list of strings and reverse each string further in the list.
  ANS:
      input="$1"
-     reverse="Pravin"
+     reverse="supriya"
      len=${#input}
      for (( i=$len-1; i>=0; i-- ))
      do 
